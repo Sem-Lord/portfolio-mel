@@ -1,0 +1,22 @@
+<nav class="navbar" [class.navbar--scrolled]="isScrolled()">
+  <div class="container navbar__inner">
+    <a href="#hero" class="navbar__brand">MH.</a>
+
+    <ul class="navbar__links" [class.navbar__links--open]="menuOpen()">
+      @for (link of navLinks; track link.anchor) {
+        <li>
+          <a [href]="link.anchor" class="navbar__link" (click)="closeMenu()">{{ link.label }}</a>
+        </li>
+      }
+      <li>
+        <a href="mailto:melvinahoungbo@gmail.com" class="navbar__cta">Contactez-moi</a>
+      </li>
+    </ul>
+
+    <button class="navbar__burger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Menu">
+      <span class="navbar__burger-bar" [class.navbar__burger-bar--open]="menuOpen()"></span>
+      <span class="navbar__burger-bar" [class.navbar__burger-bar--open]="menuOpen()"></span>
+      <span class="navbar__burger-bar" [class.navbar__burger-bar--open]="menuOpen()"></span>
+    </button>
+  </div>
+</nav>

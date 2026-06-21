@@ -1,0 +1,114 @@
+﻿.education {
+  background: var(--color-surface-alt);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-6);
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    display: flex;
+    gap: var(--sp-5);
+    align-items: flex-start;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--tr-base), transform var(--tr-base);
+
+    &:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    &--featured {
+      border-color: rgba(201,168,76,.4);
+      background: linear-gradient(135deg, rgba(201,168,76,.06) 0%, var(--color-surface) 100%);
+      grid-column: 1 / -1;
+      flex-direction: row;
+
+      .education__card-icon {
+        background: var(--color-accent);
+        color: var(--color-primary);
+        width: 52px;
+        height: 52px;
+        font-size: var(--fs-xl);
+      }
+
+      h3 {
+        font-size: var(--fs-xl);
+      }
+    }
+  }
+
+  &__card-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(26,39,68,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: var(--fs-lg);
+  }
+
+  &__card-body {
+    flex: 1;
+
+    h3 {
+      font-size: var(--fs-lg);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: var(--sp-1);
+      line-height: 1.4;
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--color-accent);
+    background: rgba(201,168,76,.12);
+    border: 1px solid rgba(201,168,76,.3);
+    padding: 2px var(--sp-3);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--sp-2);
+  }
+
+  &__school {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: var(--sp-2);
+  }
+
+  &__period {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-xs);
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: var(--sp-2);
+
+    i { font-size: 0.7rem; }
+  }
+
+  &__detail {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-top: var(--sp-2);
+  }
+}
